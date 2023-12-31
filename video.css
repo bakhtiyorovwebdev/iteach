@@ -1,0 +1,83 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  width: 600px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #000;
+}
+.main .controls {
+  height: 50px;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.6);
+  color: #fff;
+  margin-top: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#range {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 80%;
+  border-radius: 50px;
+  background: var(red);
+  outline: none;
+  border: none;
+  margin: 0.5rem;
+}
+#range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#play {
+  font-size: 1rem;
+  background: none;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  margin: 0 1rem;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.controls span {
+  font-family: arial;
+  margin: 0 0.5rem;
+}
+.text {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+#btn {
+  padding: 1rem;
+  position: relative;
+  bottom: -18rem;
+  left: -24rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: white;
+  color: #000;
+}
+#btn a {
+  text-decoration: none;
+  color: black;
+}
+#btn:hover {
+  background-color: navy;
+  border-radius: 1px solid white;
+  color: white;
+}
+#btn a:hover {
+  color: #fff;
+}

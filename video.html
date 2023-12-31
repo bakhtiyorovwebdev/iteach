@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video</title>
+    <link rel="stylesheet" href="video.css" />
+  </head>
+  <body>
+    <div class="main">
+      <p class="text">A day from our class!</p>
+      <video id="video" height="100%" width="100%">
+        <source src="/images/009 Section Intro.mp4" />
+      </video>
+      <div class="controls">
+        <button id="play">Play</button>
+        <span id="videoTime"></span>
+        <span id="videoDuration"></span>
+        <input type="range" id="range" value="0" />
+      </div>
+    </div>
+    <button type="button" id="btn">
+      <a href="/index.html">Go back home</a>
+    </button>
+    <script>
+      var play = document.getElementById("play");
+      var range = document.getElementById("range");
+      var videoTime = document.getElementById("videoTime");
+      var videoDuration = document.getElementById("videoDuration");
+
+      var video = document.getElementById("video");
+      play.addEventListener("click", function () {
+        if (video.paused) {
+          video.play();
+          document
+            .querySelector("#play")
+            .classList.replace("fa-play", "fa-pause");
+        } else {
+          video.pause();
+        }
+      });
+
+      range.addEventListener("input", function () {
+        video.currentTime = range.value;
+        range.max = Math.floor(video.duration);
+      });
+
+      video.addEventListener("timeupdate", function () {
+        videoTime.innerHTML = Math.floor(video.currentTime);
+        range.value = video.currentTime;
+        range.max = Math.floor(video.duration);
+      });
+
+      window.onload = function () {
+        videoTime.innerHTML = video.currentTime;
+        video.Duration.innerHTML = Math.floor(video.duration);
+      };
+    </script>
+  </body>
+</html>
